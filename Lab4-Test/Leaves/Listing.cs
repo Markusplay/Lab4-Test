@@ -1,18 +1,27 @@
 ﻿using Lab4_Test.Interfaces;
 namespace Lab4_Test.Leaves
 {
-    public class Listing : ITextCompositeItem
+    public class Listing : Item
     {
-        private string _listing;
-        public Listing(string listing)
+        public Listing(string name) : base(name)
         {
-            _listing = listing;
         }
-        public void Display()
+
+        public override void Add(Item subItem)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Display()
         {
             Console.WriteLine("\n```");
-            Console.Write(_listing);
+            Console.Write(name);
             Console.WriteLine("\n```");
+        }
+
+        public override void Remove(Item subItem)
+        {
+            throw new NotImplementedException();
         }
     }
 }

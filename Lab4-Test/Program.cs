@@ -1,4 +1,5 @@
-﻿using Lab4_Test.Leaves;
+﻿using Lab4_Test.Interfaces;
+using Lab4_Test.Leaves;
 using Lab4_Test.Root;
 
 namespace Lab4_Test
@@ -9,24 +10,24 @@ namespace Lab4_Test
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-            TextComposite text = new TextComposite();
+            TextComposite text = new TextComposite("");
 
-            Header header = new Header();
+            HeaderComposite header = new HeaderComposite("");
 
-            Paragraph paragraph = new Paragraph();
-            Paragraph paragraph2 = new Paragraph();
+            ParagraphComposite paragraph = new ParagraphComposite("");
+            ParagraphComposite paragraph2 = new ParagraphComposite("");
 
             Listing listing = new Listing("Listing code");
 
-            Sentence sentence = new Sentence();
-            Sentence sentence2 = new Sentence();
+            Sentence sentence = new Sentence("");
+            Sentence sentence2 = new Sentence("");
 
-            MainText main = new MainText();
+            MainTextComposite main = new MainTextComposite("");
 
             Word hello = new Word("Hello");
             Word world = new Word("world");
 
-            Punctuation dot = new Punctuation('.');
+            Punctuation dot = new Punctuation(".");
 
 
             Word I = new Word("I");
@@ -58,6 +59,8 @@ namespace Lab4_Test
             text.Display();
             Console.WriteLine("\n----------------------------------------------");
 
+            text.Remove(main);
+            text.Remove(main);
             text.Remove(main);
             text.Display();
         }

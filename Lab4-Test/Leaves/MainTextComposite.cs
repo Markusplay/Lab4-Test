@@ -1,12 +1,11 @@
 ﻿using Lab4_Test.Interfaces;
-
-namespace Lab4_Test.Root
+namespace Lab4_Test.Leaves
 {
-    public class TextComposite: Item
+    public class MainTextComposite : Item
     {
         private List<Item> children = new();
 
-        public TextComposite(string name) : base(name)
+        public MainTextComposite(string name) : base(name)
         {
         }
 
@@ -18,7 +17,6 @@ namespace Lab4_Test.Root
         {
             children.Remove(subItem);
         }
-
         public override void Display()
         {
             foreach (Item item in children)

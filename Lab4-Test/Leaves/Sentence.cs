@@ -2,26 +2,25 @@
 
 namespace Lab4_Test.Leaves
 {
-    public class Sentence: IMainTextItem, IHeaderItem
+    public class Sentence: Item
     {
-        private List<ISentenceItem> children;
+        private List<Item> children = new();
 
-        public Sentence()
+        public Sentence(string name) : base(name)
         {
-            children = new List<ISentenceItem>();
         }
 
-        public void Add(ISentenceItem subItem)
+        public override void Add(Item subItem)
         {
             children.Add(subItem);
         }
-        public void Remove(ISentenceItem subItem)
+        public override void Remove(Item subItem)
         {
             children.Remove(subItem);
         }
-        public void Display()
+        public override void Display()
         {
-            foreach (ISentenceItem item in children)
+            foreach (Item item in children)
             {
                 item.Display();
             }

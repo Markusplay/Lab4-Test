@@ -2,17 +2,27 @@
 
 namespace Lab4_Test.Leaves
 {
-    public class Word : ISentenceItem, IHeaderItem
+    public class Word : Item
     {
-        private string _word;
-        public Word(string word)
+
+        public Word(string name) : base(name)
         {
-            _word = word;
         }
-        public void Display()
+
+        public override void Add(Item subItem)
         {
-            Console.Write(_word);
+            throw new NotImplementedException();
+        }
+
+        public override void Display()
+        {
+            Console.Write(name);
             Console.Write(" ");
+        }
+
+        public override void Remove(Item subItem)
+        {
+            throw new NotImplementedException();
         }
     }
 }

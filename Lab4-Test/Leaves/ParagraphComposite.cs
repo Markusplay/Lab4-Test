@@ -1,12 +1,11 @@
 ﻿using Lab4_Test.Interfaces;
-
-namespace Lab4_Test.Root
+namespace Lab4_Test.Leaves
 {
-    public class TextComposite: Item
+    public class ParagraphComposite: Item
     {
         private List<Item> children = new();
 
-        public TextComposite(string name) : base(name)
+        public ParagraphComposite(string name) : base(name)
         {
         }
 
@@ -18,9 +17,9 @@ namespace Lab4_Test.Root
         {
             children.Remove(subItem);
         }
-
         public override void Display()
         {
+            Console.Write("\n\t");
             foreach (Item item in children)
             {
                 item.Display();

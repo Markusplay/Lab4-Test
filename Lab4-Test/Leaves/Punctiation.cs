@@ -2,16 +2,25 @@
 
 namespace Lab4_Test.Leaves
 {
-    public class Punctuation : ISentenceItem
+    public class Punctuation : Item
     {
-        private char _symbol;
-        public Punctuation(char symbol)
+        public Punctuation(string name) : base(name)
         {
-            _symbol = symbol;
         }
-        public void Display()
+
+        public override void Add(Item subItem)
         {
-            Console.Write(_symbol);
+            throw new NotImplementedException();
+        }
+
+        public override void Display()
+        {
+            Console.Write(name);
+        }
+
+        public override void Remove(Item subItem)
+        {
+            throw new NotImplementedException();
         }
     }
 }
